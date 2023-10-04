@@ -49,14 +49,3 @@ document.getElementById('left-arrow').addEventListener('click', function () {
 document.getElementById('right-arrow').addEventListener('click', function () {
   changeSlide(currentIndex + 1)
 })
-
-const dotsContainer = document.querySelector('.dots')
-
-slides.forEach((slide, index) => {
-  const dot = document.createElement('div')
-  dot.classList.add('dot')
-  dot.addEventListener('click', function () {
-    changeSlide(index)
-  })
-  dotsContainer.appendChild(dot)
-})
