@@ -33,13 +33,6 @@ function changeSlide(index) {
   bannerImg.src = './assets/images/slideshow/' + slides[index].image
   bannerTagLine.innerHTML = slides[index].tagLine
 
-  document
-    .querySelectorAll('.dot')
-    .forEach((dot) => dot.classList.remove('dot_selected'))
-
-  const activeDot = dotsContainer.children[index]
-  activeDot.classList.add('dot_selected')
-
   currentIndex = index
 }
 
@@ -48,15 +41,4 @@ document.getElementById('left-arrow').addEventListener('click', function () {
 })
 document.getElementById('right-arrow').addEventListener('click', function () {
   changeSlide(currentIndex + 1)
-})
-
-const dotsContainer = document.querySelector('.dots')
-
-slides.forEach((slide, index) => {
-  const dot = document.createElement('div')
-  dot.classList.add('dot')
-  dot.addEventListener('click', function () {
-    changeSlide(index)
-  })
-  dotsContainer.appendChild(dot)
 })
